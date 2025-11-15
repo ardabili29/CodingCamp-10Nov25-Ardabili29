@@ -3,26 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do List Ardabili Apps</title>
+    <title>Todo List Ardabili Apps</title>
 
     <!-- link eksternal css css file -->
     <link rel="stylesheet" href="css\style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
 
     <!-- header section -->
     <header>
-        <h1>To do List Ardabili Apps</h1>
+        <h1 class="text-2xl font bold pb-5">Todo List Ardabili Apps</h1>
+        
     </header>
      
     <!-- main content goes here -->
-    <main></main>
+    <main style="box-shadow: h-offset v-offset blur spread color inset;">
+
+        <!-- form  Sectionn  k,cl-->
+        <section class="form-section">
+            <form>
+                <!-- To do Input -->
+                <input type="text" class="border rounded p-2" id="todo-input" placeholder="Enter a new todo item">
+
+                <!-- Date Input -->
+                <input type="date" class="border rounded p-2" id="todo-date" placeholder="Enter due date">
+            </form>
+
+            <!-- Add Button -->
+            <button type="button" onclick="addTodo();" class="border rounded p-2 bg-green-500 text-white">Add Todo</button> 
+        </section>
+
+        <!-- Action Section -->
+        <section class="flex pt-2 justify-between">
+            
+            <!-- Filter Options -->
+            <button type="button" onclick="filterTodos();"class="border rounded p-2 bg-blue-500 text-white">Filter Todos</button>
+
+            
+            <!-- Clear All Button -->
+           <button type="button" onclick="clearTodos();"class="border rounded p-2 bg-red-500 text-white">Clear All Todos</button>
+        </section>
+   
+    
+    <!-- Todo List Section -->
+         <section class="pt-2">
+            <header>
+                <h1 class="text-2xl font-semibold">List of Todos</h1>
+            </header>
+
+            <ul class="pt-2" id="todo-list">
+                <!-- Todo items will be dynamically added here -->
+                <li>No todos available</li>
+            </ul>  
+        </section>
+    </main>
     
     <!-- footer section -->
-    <footer></footer>
+    <footer class="pt-5">
+        <p> &copy; 2025 Todo List Ardabili Apps</p>
+    </footer>
 
+    <!-- Link to external JavaScript file -->
     <script src="js/script.js"></script>
-</body>
+
+    </body>
 
 </html>
